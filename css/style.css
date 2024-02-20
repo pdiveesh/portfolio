@@ -15,7 +15,7 @@
     
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #16e0bd;
+    --clr-accent: #00B2A9;
     
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -384,7 +384,7 @@ header {
 /* My Work */
 
 .my-work {
-    background-color: var(--clr-dark);
+    background-color: #E3D4AD;
     color: var(--clr-light);
     text-align: center;    
 }
