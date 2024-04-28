@@ -389,14 +389,24 @@ header {
     text-align: center;    
 }
 
-.portfolio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
+
+    .portfolio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px; /* Adjust as needed */
+    }
+
 
 .portfolio__item {
     background: var(--clr-accent);
     overflow: hidden;
+    text-decoration: none;
+    color: #000; /* Change this to the color that makes the text visible on your background */
+    font-weight: bold; /* This will make the text bold */
+    font-family: 'Roboto', sans-serif; /* Change this to your preferred font */
+    font-size: 16px; /* Adjust size as needed */
+    line-height: 1.5; /* Adjust line height for readability */
+    letter-spacing: 0.05em; /* Adjust letter spacing for style */
 }
 
 .portfolio__img {
@@ -412,7 +422,7 @@ header {
 
 .portfolio__img:hover,
 .portfolio__item:focus .portfolio__img {
-    transform: scale(1.2);
+    transform: scale(1.3);
     opacity: .5;
 }
 
