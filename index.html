@@ -11,6 +11,50 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
         
         <link rel="stylesheet" href="css/style.css">
+        <style>
+            /* Pop-up styles */
+            #popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0, 0, 0, 0.9);
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                text-align: center;
+                z-index: 1000;
+                display: none; /* Hidden by default */
+            }
+
+            #popup button {
+                margin-top: 10px;
+                padding: 10px 20px;
+                background: #ff5722;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            #popup button:hover {
+                background: #e64a19;
+            }
+
+            /* Background overlay */
+            #overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 999;
+                display: none; /* Hidden by default */
+            }
+        </style>
 
     </head>
     <body>
@@ -32,6 +76,43 @@
         </header>
         
         <!-- Introduction -->
+        <!-- Pop-up overlay -->
+        <div id="overlay"></div>
+        
+        <!-- Work in Progress Pop-up -->
+        <div id="popup">
+            <h2>Work in Progress</h2>
+            <p>Some sections of this website are still under development. Please check back later!</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link" onclick="showPopup()">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Other sections -->
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Hi, I am <strong>Diveesh Poli</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Software Developer</p>
+            <img src="img/main.JPG" alt="a picture of Diveesh staring at code in hackathon" class="intro__img">
+        </section>
+        
         <section class="intro" id="home">
             <h1 class="section__title section__title--intro">
                 Hi, I am <strong>Diveesh Poli</strong>
@@ -178,6 +259,20 @@
         
         
         <script src="js/index.js"></script>
+          <!-- JavaScript -->
+        <script>
+            // Function to show the pop-up
+            function showPopup() {
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            }
+
+            // Function to close the pop-up
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('overlay').style.display = 'none';
+            }
+        </script>
         
     </body>
 </html>
